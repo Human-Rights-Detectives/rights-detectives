@@ -31,7 +31,7 @@ const MainButton = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`relative rounded-[32px] ${className}`}
+      className={`cursor-pointer relative rounded-[32px] ${className}`}
       style={buttonStyle}
     >
       {/* 배경 레이어 1 (하단) */}
