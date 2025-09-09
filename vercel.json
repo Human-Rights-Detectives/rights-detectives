@@ -1,7 +1,6 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "rm -rf package-lock.json node_modules && npm install --include=optional && npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm ci --include=optional",
   "framework": "vite",
   "env": {
     "NODE_ENV": "production"
