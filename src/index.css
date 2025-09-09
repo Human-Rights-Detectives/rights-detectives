@@ -1,9 +1,11 @@
 /* 기본 리셋 및 전역 스타일 */
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
+/* 기본 마진/패딩 리셋은 Tailwind의 preflight가 처리 */
 
 html,
 body {

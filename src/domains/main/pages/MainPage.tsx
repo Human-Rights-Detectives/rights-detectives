@@ -11,7 +11,7 @@ const MainPage: React.FC = () => {
   return (
     <main className="min-h-screen flex flex-col items-center p-8 relative bg-[#FFD785]">
       {/* 배경 이미지 */}
-      <div 
+      <div
         className="absolute inset-0 opacity-29"
         style={{
           backgroundImage: "url('/src/assets/images/board-game-image.jpg')",
@@ -20,16 +20,14 @@ const MainPage: React.FC = () => {
           backgroundRepeat: "no-repeat",
         }}
       ></div>
-      
+
       {/* 배경 오버레이 */}
       <div className="absolute inset-0 backdrop-blur-sm"></div>
 
       {/* 콘텐츠 */}
-      <div className="relative z-10 flex flex-col gap-4 mt-12 items-center w-full">
+      <div className="relative z-10 flex flex-col gap-4 items-center w-full">
         {/* 로고 섹션 */}
-        <div className="mb-12">
-          <Logo />
-        </div>
+        <Logo />
 
         {/* 에피소드 목록 */}
         <div className="flex flex-col items-center gap-4 w-full max-w-md">
@@ -39,7 +37,7 @@ const MainPage: React.FC = () => {
               episodeNumber={episode.number.toString()}
               title={episode.title}
               onClick={() => handleEpisodeClick(episode.id)}
-              height={78}
+              height={75}
             />
           ))}
         </div>
