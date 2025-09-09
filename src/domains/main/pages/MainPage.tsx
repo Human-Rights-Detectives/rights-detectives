@@ -12,7 +12,7 @@ const MainPage: React.FC = () => {
     <main className="min-h-screen flex flex-col items-center bg-[#ffd785] p-8">
       {/* 로고 섹션 */}
       <div className="mb-12">
-        <Logo width={280} height={244} />
+        <Logo />
       </div>
 
       {/* 에피소드 목록 */}
@@ -23,6 +23,7 @@ const MainPage: React.FC = () => {
             episodeNumber={episode.title.split(" ")[0]} // "EP01" 부분만 추출
             title={episode.title.split(" ").slice(1).join(" ")} // "환자를 이력지 마세요" 부분
             onClick={() => handleEpisodeClick(episode.id)}
+            height={78}
           />
         ))}
       </div>
