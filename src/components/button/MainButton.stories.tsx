@@ -25,6 +25,14 @@ const meta = {
       control: 'text',
       description: '추가 CSS 클래스',
     },
+    width: {
+      control: { type: 'number', min: 100, max: 500, step: 10 },
+      description: '버튼의 너비 (픽셀)',
+    },
+    height: {
+      control: { type: 'number', min: 40, max: 200, step: 5 },
+      description: '버튼의 높이 (픽셀)',
+    },
   },
 } satisfies Meta<typeof MainButton>;
 
@@ -60,5 +68,29 @@ export const CustomStyling: Story = {
   args: {
     children: '커스텀 스타일',
     className: 'shadow-lg',
+  },
+};
+
+export const SmallButton: Story = {
+  args: {
+    children: '작은 버튼',
+    width: 120,
+    height: 40,
+  },
+};
+
+export const LargeButton: Story = {
+  args: {
+    children: '큰 버튼',
+    width: 300,
+    height: 80,
+  },
+};
+
+export const WideButton: Story = {
+  args: {
+    children: '넓은 버튼',
+    width: 400,
+    height: 60,
   },
 };
