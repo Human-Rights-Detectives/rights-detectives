@@ -10,7 +10,15 @@ const StartPage: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center">
+    <main 
+      className="min-h-screen flex flex-col items-center justify-center relative"
+      style={{
+        backgroundImage: "url('/src/assets/images/start-bg.svg')",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "center",
+        backgroundSize: "auto"
+      }}
+    >
       {/* 로고 섹션 */}
       <div className="mb-16">
         <Logo width={320} height={279} />
