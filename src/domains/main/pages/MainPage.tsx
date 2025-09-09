@@ -2,10 +2,13 @@ import React from "react";
 import Logo from "../../../components/logo/Logo";
 import EpisodeCardItem from "../components/EpisodeCardItem";
 import episodesData from "../../../data/episode";
+import { useNavigate } from "react-router";
 
 const MainPage: React.FC = () => {
+  const navigate = useNavigate();
+  
   const handleEpisodeClick = (episodeId: string) => {
-    console.log(`에피소드 선택: ${episodeId}`);
+    navigate(`/episode/${episodeId}`);
   };
 
   return (
