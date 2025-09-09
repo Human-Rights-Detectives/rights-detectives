@@ -26,23 +26,16 @@ const EpisodeCardItem = ({
     return width;
   };
 
-  const getHeightClass = (height: string | number) => {
-    if (typeof height === 'number') {
-      return `h-[${height}px]`;
-    }
-    // 퍼센트 값이나 기타 CSS 값 처리
-    if (height.includes('%') || height.includes('vw') || height.includes('vh') || height.includes('rem') || height.includes('em')) {
-      return `h-[${height}]`;
-    }
-    return height;
-  };
-
   const widthClass = getWidthClass(width);
-  const heightClass = getHeightClass(height);
+
+  // height는 인라인 스타일로 처리
+  const heightStyle = typeof height === 'number' ? { height: `${height}px` } : 
+                     typeof height === 'string' ? { height } : {};
 
   return (
     <div 
-      className={`cursor-pointer transform transition-transform hover:scale-105 hover:shadow-lg ${widthClass} ${heightClass} bg-[#FFE9BC] rounded-[59px] flex flex-col justify-center px-6 py-3 ${className}`}
+      className={`cursor-pointer transform transition-transform hover:scale-105 hover:shadow-lg ${widthClass} bg-[#FFE9BC] rounded-[59px] flex flex-col justify-center px-6 py-3 ${className}`}
+      style={heightStyle}
       onClick={onClick}
     >
       <div className="text-[#834C17] text-center text-xl font-bold font-['Jalnan'] mb-1">
