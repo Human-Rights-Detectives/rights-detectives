@@ -24,7 +24,7 @@ const StartPage: React.FC = () => {
         <Logo width={320} height={279} />
       </div>
 
-      <MainButton onClick={handleStartClick} width={200} height={60}>
+      <MainButton className="transform transition-transform hover:scale-105" onClick={handleStartClick} width={200} height={60}>
         시작하기
       </MainButton>
     </main>
