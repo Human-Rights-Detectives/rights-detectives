@@ -14,7 +14,7 @@ const MainPage: React.FC = () => {
       <div
         className="absolute inset-0 opacity-29"
         style={{
-          backgroundImage: "url('/src/assets/images/board-game-image.jpg')",
+          backgroundImage: "url('/images/board-game-image.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

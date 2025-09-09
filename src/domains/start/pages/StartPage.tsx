@@ -13,7 +13,7 @@ const StartPage: React.FC = () => {
     <main 
       className="min-h-screen flex flex-col items-center justify-center relative"
       style={{
-        backgroundImage: "url('/src/assets/images/start-bg.svg')",
+        backgroundImage: "url('/images/start-bg.svg')",
         backgroundRepeat: "repeat",
         backgroundPosition: "center",
         backgroundSize: "auto"
