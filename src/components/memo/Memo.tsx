@@ -40,8 +40,8 @@ const Memo: React.FC<MemoProps> = ({
       {image && (
         <image
           href={image}
-          x="15"
-          y="30"
+          x="21"
+          y="31"
           width="89"
           height="91"
           preserveAspectRatio="xMidYMid meet"
