@@ -121,6 +121,7 @@ const EpisodePage: React.FC = () => {
         currentStep === EpisodeStep.MISSION_3_CAMERA) &&
         currentMission && (
           <MissionCameraStep
+            episode={episode}
             mission={currentMission}
             onComplete={handleMissionCameraComplete}
           />
