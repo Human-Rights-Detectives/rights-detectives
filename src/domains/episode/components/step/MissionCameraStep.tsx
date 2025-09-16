@@ -145,7 +145,7 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
   console.log("🎥 현재 카메라 상태:", cameraState);
 
   return (
-    <div className="relative w-[340px] h-[550px]">
+    <>
       {/* 목표 이미지 (숨김) */}
       <img
         ref={goalImageRef}
@@ -160,7 +160,7 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
 
       {cameraState === CameraState.FAILURE ? (
         // 실패 결과 화면
-        <>
+        <div className="relative w-[340px] h-[550px]">
           {/* 메인 Document */}
           <Document
             width={340}
@@ -200,7 +200,7 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
               다시 조사하기
             </MainButton>
           </div>
-        </>
+        </div>
       ) : (
         // 촬영 중 화면 (기본 상태)
         <div className="relative w-full h-full bg-transparent rounded-lg overflow-hidden">
@@ -242,25 +242,25 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
             </div>
           )}
 
-           {hasCameraPermission && (
-             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-               <MainButton
-                 onClick={capturePhoto}
-                 width={159}
-                 height={46}
-                 fontSize={20}
-                 textColor="#F9E6B5"
-                 disabled={cameraState === CameraState.CAPTURING}
-                 loading={cameraState === CameraState.CAPTURING}
-                 loadingText="비교 중..."
-               >
-                 사진 촬영하기
-               </MainButton>
-             </div>
-           )}
+          {hasCameraPermission && (
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+              <MainButton
+                onClick={capturePhoto}
+                width={159}
+                height={46}
+                fontSize={20}
+                textColor="#F9E6B5"
+                disabled={cameraState === CameraState.CAPTURING}
+                loading={cameraState === CameraState.CAPTURING}
+                loadingText="비교 중..."
+              >
+                사진 촬영하기
+              </MainButton>
+            </div>
+          )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
