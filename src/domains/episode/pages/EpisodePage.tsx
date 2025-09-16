@@ -133,6 +133,7 @@ const EpisodePage: React.FC = () => {
         currentStep === EpisodeStep.MISSION_3_COMPLETE) &&
         currentMission && (
           <MissionCompleteStep
+            episode={episode}
             mission={currentMission}
             onNext={handleMissionCompleteNext}
             isLastMission={isLastMission}
