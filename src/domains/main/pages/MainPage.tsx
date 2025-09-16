@@ -37,7 +37,7 @@ const MainPage: React.FC = () => {
           {episodesData.map((episode) => (
             <EpisodeCardItem
               key={episode.id}
-              episodeNumber={episode.number.toString()}
+              episodeNumber={`EPISODE ${episode.number.toString().padStart(2, '0')}`}
               title={episode.title}
               onClick={() => handleEpisodeClick(episode.id)}
               height={75}
