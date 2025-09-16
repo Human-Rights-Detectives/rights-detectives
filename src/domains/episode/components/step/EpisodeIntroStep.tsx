@@ -43,14 +43,14 @@ const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({
         </div>
 
         {/* EPISODE 0X*/}
-        <div className="absolute top-12 right-8 z-10 text-[#F9E6B5] text-center text-[20px] font-regular font-['Jalnan']">
+        <div className="absolute top-12 right-8 z-10 text-[#F9E6B5] text-center text-[20px] font-regular font-jalnan">
           {`EPISODE ${episode.number.toString().padStart(2, "0")}`}
         </div>
 
         {/* 메인 컨텐츠 영역 */}
         <div className="absolute top-20 left-12 w-[280px] h-[400px] z-10">
           {/* MISSION 01 */}
-          <div className="text-[#4B3118] text-left text-[18px] font-bold font-['Inter'] mb-4">
+          <div className="text-[#4B3118] text-left text-[18px] font-bold font-inter mb-4">
             {`MISSION ${mission.missionNumber.toString().padStart(2, "0")}`}
           </div>
 
@@ -68,7 +68,7 @@ const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({
           </div>
 
           {/* 설명 텍스트 */}
-          <div className="text-[#4B3118] text-center text-[21px] font-regular font-inter leading-relaxed mb-8 whitespace-pre-line">
+          <div className="text-[#4B3118] text-center text-[21px] font-regular font-omyu-pretty leading-relaxed mb-8 whitespace-pre-line">
             {episode.description}
           </div>
 
