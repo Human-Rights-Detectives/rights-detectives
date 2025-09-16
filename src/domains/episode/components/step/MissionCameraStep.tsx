@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import type { Episode, Mission } from "../../../../types";
 import { compareImages } from "../../../../utils/image-similarity";
 import MainButton from "../../../../components/button/MainButton";
+import Memo from "../../../../components/memo/Memo";
 
 interface MissionCameraStepProps {
   episode: Episode;
@@ -129,7 +130,7 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
   }, []);
 
   return (
-    <div className="relative w-[340px] h-[550px] mx-auto">
+    <div className="relative inset-0">
       {/* 목표 이미지 (숨김) */}
       <img
         ref={goalImageRef}
@@ -155,7 +156,7 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
 
       {!showResult ? (
         // 카메라 화면
-        <div className="relative w-full h-full bg-black rounded-lg overflow-hidden">
+        <div className="relative w-full h-full bg-transparent rounded-lg overflow-hidden">
           <video
             ref={videoRef}
             autoPlay
@@ -163,6 +164,24 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
             muted
             className="w-full h-full object-cover"
           />
+          
+          {/* Memo 컴포넌트와 안내 텍스트 오버레이 */}
+          <div className="absolute top-12 left-[50%] -translate-x-1/2 flex flex-col items-center justify-center">
+            {/* Memo 컴포넌트 */}
+            <div className="mb-6">
+              <Memo width={130} height={141} image={`/images/target/${episode.number}-${mission.missionNumber}.jpg`} />
+            </div>
+            
+            {/* 안내 텍스트 */}
+            <div className="text-center text-white">
+              <p className="text-lg font-bold mb-1">
+                그림 속 장면을 보고,
+              </p>
+              <p className="text-lg font-bold">
+                사건 현장을 찾아보세요!
+              </p>
+            </div>
+          </div>
           
           {/* 촬영 버튼 */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
