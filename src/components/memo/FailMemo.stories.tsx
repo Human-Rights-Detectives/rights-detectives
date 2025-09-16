@@ -1,31 +1,28 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
-import FailMemo from './FailMemo';
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import FailMemo from "./FailMemo";
 
 const meta = {
-  title: 'Components/FailMemo',
+  title: "Components/FailMemo",
   component: FailMemo,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     width: {
-      control: { type: 'number', min: 50, max: 300, step: 10 },
-      description: '컴포넌트의 너비 (픽셀)',
+      control: { type: "number", min: 50, max: 300, step: 10 },
+      description: "컴포넌트의 너비 (픽셀)",
     },
     height: {
-      control: { type: 'number', min: 50, max: 300, step: 10 },
-      description: '컴포넌트의 높이 (픽셀)',
+      control: { type: "number", min: 50, max: 300, step: 10 },
+      description: "컴포넌트의 높이 (픽셀)",
     },
     className: {
-      control: 'text',
-      description: '추가 CSS 클래스명',
+      control: "text",
+      description: "추가 CSS 클래스명",
     },
   },
-  args: {
-    onClick: fn(),
-  },
+  args: {},
 } satisfies Meta<typeof FailMemo>;
 
 export default meta;
