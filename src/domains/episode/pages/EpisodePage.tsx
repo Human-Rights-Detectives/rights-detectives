@@ -79,7 +79,7 @@ const EpisodePage: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center relative">
+    <main className="h-screen flex flex-col items-center justify-center relative">
       {/* 배경 이미지 */}
       <div
         className="absolute inset-0"

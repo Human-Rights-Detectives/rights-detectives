@@ -18,73 +18,65 @@ const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({
   onNext,
 }) => {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="relative w-[400px] h-[600px]">
-        {/* 메인 Document */}
-        <div className="absolute inset-0">
-          <Document
-            width={400}
-            height={600}
-            colors={{
-              border: episode.color.borderColor,
-              inner: episode.color.innerColor,
-              holes: "#765136",
-              lines: episode.color.linesColor,
-              surface: "#EDD39E",
-              background: "#F9E6B5",
-              stroke: "#422A18",
-            }}
-          />
+    <div className="relative w-[340px] h-[550px]">
+      {/* 메인 Document */}
+      <Document
+        width={340}
+        height={550}
+        colors={{
+          border: episode.color.borderColor,
+          inner: episode.color.innerColor,
+          holes: "#765136",
+          lines: episode.color.linesColor,
+          surface: "#EDD39E",
+          background: "#F9E6B5",
+          stroke: "#422A18",
+        }}
+      />
+
+      {/* 돋보기 - 왼쪽 상단에 배치 */}
+      <div className="absolute -top-4 left-0 z-10">
+        <MagnifyingGlass width={94} height={126} />
+      </div>
+
+      {/* EPISODE 0X*/}
+      <div className="absolute top-4 left-[52%] -translate-x-1/2 z-10 text-[#F9E6B5] text-center text-[20px] font-regular font-jalnan">
+        {`EPISODE ${episode.number.toString().padStart(2, "0")}`}
+      </div>
+
+      {/* 메인 컨텐츠 영역 */}
+      <div className="absolute top-25 left-[52%] -translate-x-1/2 w-[217px] h-[328px] z-10">
+        {/* MISSION 01 */}
+        <div className="text-[#4B3118] text-left text-[18px] font-bold font-inter">
+          {`MISSION ${mission.missionNumber.toString().padStart(2, "0")}`}
+        </div>
+        {/* 제목 영역 */}
+        <div className="mb-[19px] relative">
+          <div className="absolute -top-5 left-28">
+            <Star width={46} height={46} />
+          </div>
+          <h1 className="text-[#4B3118] text-left text-[38px] font-bold font-sebang-gothic leading-[1.2] whitespace-pre-line mb-1">
+            {episode.title}
+          </h1>
+          <Underline width={220} height={3} />
         </div>
 
-        {/* 돋보기 - 왼쪽 상단에 배치 */}
-        <div className="absolute top-4 left-4 z-10">
-          <MagnifyingGlass width={94} height={126} />
+        {/* 설명 텍스트 */}
+        <div className="text-[#4B3118] text-center text-[21px] font-regular font-omyu-pretty leading-[30px] mb-8 whitespace-pre-line">
+          {episode.description}
         </div>
-
-        {/* EPISODE 0X*/}
-        <div className="absolute top-12 right-8 z-10 text-[#F9E6B5] text-center text-[20px] font-regular font-jalnan">
-          {`EPISODE ${episode.number.toString().padStart(2, "0")}`}
-        </div>
-
-        {/* 메인 컨텐츠 영역 */}
-        <div className="absolute top-20 left-12 w-[280px] h-[400px] z-10">
-          {/* MISSION 01 */}
-          <div className="text-[#4B3118] text-left text-[18px] font-bold font-inter mb-4">
-            {`MISSION ${mission.missionNumber.toString().padStart(2, "0")}`}
-          </div>
-
-          {/* 제목 영역 */}
-          <div className="mb-6">
-            <div className="flex items-start justify-between mb-2">
-              <h1 className="text-[#4B3118] text-left text-[38px] font-bold font-sebang-gothic leading-[1.2] whitespace-pre-line flex-1">
-                {episode.title}
-              </h1>
-              <div className="ml-4">
-                <Star width={46} height={46} />
-              </div>
-            </div>
-            <Underline width={220} height={3} />
-          </div>
-
-          {/* 설명 텍스트 */}
-          <div className="text-[#4B3118] text-center text-[21px] font-regular font-omyu-pretty leading-relaxed mb-8 whitespace-pre-line">
-            {episode.description}
-          </div>
-
-          {/* 시작하기 버튼 */}
-          <div className="flex justify-center">
-            <MainButton
-              onClick={onNext}
-              width={160}
-              height={50}
-              fontSize={23}
-              textColor="#F9E6B5"
-            >
-              사건 조사하기
-            </MainButton>
-          </div>
-        </div>
+      </div>
+      {/* 시작하기 버튼 */}
+      <div className="absolute bottom-7 left-[52%] -translate-x-1/2">
+        <MainButton
+          onClick={onNext}
+          width={159}
+          height={46}
+          fontSize={22}
+          textColor="#F9E6B5"
+        >
+          사건 조사하기
+        </MainButton>
       </div>
     </div>
   );
