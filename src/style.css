@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --font-jalnan: 'Jalnan', sans-serif;
+  --font-nanum-square: 'NanumSquare', sans-serif;
+  --font-nanum-square-acr: 'NanumSquare_acR', sans-serif;
+  --font-omyu-pretty: 'OmyuPretty', sans-serif;
+  --font-sebang-gothic: 'SebangGothic', sans-serif;
+}

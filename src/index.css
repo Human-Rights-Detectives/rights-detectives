@@ -1,3 +1,52 @@
+/* 폰트 정의 */
+@font-face {
+  font-family: 'Jalnan';
+  src: url('/font/Jalnan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  src: url('/font/NanumSquare.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquare_acR';
+  src: url('/font/NanumSquare_acR.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OmyuPretty';
+  src: url('/font/omyu pretty.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SebangGothic';
+  src: url('/font/SEBANG Gothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SebangGothic';
+  src: url('/font/SEBANG Gothic Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* 기본 리셋 및 전역 스타일 */
 *,
 *::before,
