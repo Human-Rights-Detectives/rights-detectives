@@ -27,7 +27,7 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 
   // 목표 이미지 경로
-  const goalImagePath = `/src/assets/images/target/${episode.number}-${mission.missionNumber}.jpg`;
+  const goalImagePath = `/images/target/${episode.number}-${mission.missionNumber}.jpg`;
 
   // 카메라 스트림 시작
   const startCamera = async () => {

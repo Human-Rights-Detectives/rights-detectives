@@ -68,7 +68,7 @@ const MissionIntroStep: React.FC<MissionIntroStepProps> = ({
         <Memo
           width={126}
           height={126}
-          image={`/src/assets/images/target/${episode.number}-${mission.missionNumber}.jpg`}
+          image={`/images/target/${episode.number}-${mission.missionNumber}.jpg`}
         />
       </div>
       {/* 메인 컨텐츠 영역 */}
