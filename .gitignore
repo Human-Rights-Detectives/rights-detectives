@@ -190,3 +190,5 @@ ehthumbs.db
 Desktop.ini
 
 *storybook.log
+
+.playwright-mcp

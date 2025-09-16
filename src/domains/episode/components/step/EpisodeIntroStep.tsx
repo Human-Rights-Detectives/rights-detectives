@@ -1,25 +1,84 @@
 import React from "react";
-import type { Episode } from "../../../../types";
+import type { Episode, Mission } from "../../../../types";
+import Document from "../Document";
+import MagnifyingGlass from "../MagnifyingGlass";
+import Star from "../../../../components/star/Star";
+import Underline from "../../../../components/underline/Underline";
+import MainButton from "../../../../components/button/MainButton";
 
 interface EpisodeIntroStepProps {
   episode: Episode;
+  mission: Mission;
   onNext: () => void;
 }
 
-const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({ episode, onNext }) => {
+const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({
+  episode,
+  mission,
+  onNext,
+}) => {
   return (
-    <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8 text-white">
-      <div className="max-w-2xl mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-6">{episode.title}</h1>
-        <div className="text-lg leading-relaxed mb-8 whitespace-pre-line">
-          {episode.description}
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="relative w-[400px] h-[600px]">
+        {/* 메인 Document */}
+        <div className="absolute inset-0">
+          <Document
+            width={400}
+            height={600}
+            colors={{
+              border: "#BF5C1D",
+              inner: "#F99D31",
+              holes: "#765136",
+              lines: "#FCBB76",
+              surface: "#EDD39E",
+              background: "#F9E6B5",
+              stroke: "#422A18",
+            }}
+          />
         </div>
-        <button
-          onClick={onNext}
-          className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
-        >
-          시작하기
-        </button>
+
+        {/* 돋보기 - 왼쪽 상단에 배치 */}
+        <div className="absolute top-4 left-4 z-10">
+          <MagnifyingGlass width={60} height={80} />
+        </div>
+
+        {/* EPISODE 0X*/}
+        <div className="absolute top-12 right-8 z-10 text-[#F9E6B5] text-center text-[20px] font-regular font-['Jalnan']">
+          {`EPISODE ${episode.number.toString().padStart(2, "0")}`}
+        </div>
+
+        {/* 메인 컨텐츠 영역 */}
+        <div className="absolute top-20 left-12 w-[280px] h-[400px] z-10">
+          {/* MISSION 01 */}
+          <div className="text-[#4B3118] text-left text-[18px] font-bold font-['Inter'] mb-4">
+            {`MISSION ${mission.missionNumber.toString().padStart(2, "0")}`}
+          </div>
+
+          {/* 제목 영역 */}
+          <div className="mb-6">
+            <div className="flex items-start justify-between mb-2">
+              <h1 className="text-[#4B3118] text-left text-[38px] font-bold font-['SEBANG_Gothic'] whitespace-pre-line flex-1">
+                {episode.title}
+              </h1>
+              <div className="ml-4">
+                <Star width={24} height={24} />
+              </div>
+            </div>
+            <Underline width={200} height={3} />
+          </div>
+
+          {/* 설명 텍스트 */}
+          <div className="text-[#4B3118] text-center text-[21px] font-regular font-['Inter'] leading-relaxed mb-8 whitespace-pre-line">
+            {episode.description}
+          </div>
+
+          {/* 시작하기 버튼 */}
+          <div className="flex justify-center">
+            <MainButton onClick={onNext} width={160} height={50}>
+              사건 조사하기
+            </MainButton>
+          </div>
+        </div>
       </div>
     </div>
   );

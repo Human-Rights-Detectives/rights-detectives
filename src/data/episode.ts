@@ -4,7 +4,7 @@ const episodesData: Episode[] = [
   {
     id: 1,
     number: 1,
-    title: "환자분 이러지 마세요",
+    title: "환자분!\n이러지 마세요",
     description:
       "거위군은 이번 달 부터\n정신과 병동에서 실습 중인\n대학생입니다.\n거위군은 퇴원을 앞둔\n다람쥐 환자를 만났어요.\n그런데 갑자기..!",
     missions: [
