@@ -72,14 +72,14 @@ const MissionIntroStep: React.FC<MissionIntroStepProps> = ({
         />
       </div>
       {/* 메인 컨텐츠 영역 */}
-      <div className="absolute top-54 left-[52%] -translate-x-1/2 w-[217px] h-[328px] z-10">
+      <div className="absolute top-54 left-[52%] -translate-x-1/2 w-[254px] h-[217px] z-10">
         {/* 설명 텍스트 */}
         <div className="text-[#4B3118] text-center text-[21px] font-regular font-omyu-pretty leading-[30px] mb-[12px] whitespace-pre-line">
           {mission.description}
         </div>
 
         {/* 두 번째 라인 */}
-        <div className="mb-4">
+        <div className="mb-4 flex justify-center">
           <Line width={220} height={3} />
         </div>
 
