@@ -48,10 +48,10 @@ const EpisodeCardItem = ({
       style={heightStyle}
       onClick={onClick}
     >
-      <div className="text-[#834C17] text-center text-xl font-bold font-['Jalnan'] mb-1">
+      <div className="text-[#834C17] text-center text-xl font-bold font-jalnan mb-1">
         {episodeNumber}
       </div>
-      <div className="text-[#834C17] text-center text-lg font-normal font-['SEBANG_Gothic'] leading-tight">
+      <div className="text-[#834C17] text-center text-lg font-normal font-sebang-gothic leading-tight">
         {title}
       </div>
     </div>

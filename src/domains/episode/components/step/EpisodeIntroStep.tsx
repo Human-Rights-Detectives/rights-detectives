@@ -57,7 +57,7 @@ const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({
           {/* 제목 영역 */}
           <div className="mb-6">
             <div className="flex items-start justify-between mb-2">
-              <h1 className="text-[#4B3118] text-left text-[38px] font-bold font-['SEBANG_Gothic'] whitespace-pre-line flex-1">
+              <h1 className="text-[#4B3118] text-left text-[38px] font-bold font-sebang-gothic whitespace-pre-line flex-1">
                 {episode.title}
               </h1>
               <div className="ml-4">
@@ -68,13 +68,19 @@ const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({
           </div>
 
           {/* 설명 텍스트 */}
-          <div className="text-[#4B3118] text-center text-[21px] font-regular font-['Inter'] leading-relaxed mb-8 whitespace-pre-line">
+          <div className="text-[#4B3118] text-center text-[21px] font-regular font-inter leading-relaxed mb-8 whitespace-pre-line">
             {episode.description}
           </div>
 
           {/* 시작하기 버튼 */}
           <div className="flex justify-center">
-            <MainButton onClick={onNext} width={160} height={50}>
+            <MainButton
+              onClick={onNext}
+              width={160}
+              height={50}
+              fontSize={23}
+              textColor="#F9E6B5"
+            >
               사건 조사하기
             </MainButton>
           </div>

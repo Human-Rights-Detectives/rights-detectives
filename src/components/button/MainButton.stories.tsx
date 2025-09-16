@@ -33,6 +33,14 @@ const meta = {
       control: { type: 'number', min: 40, max: 200, step: 5 },
       description: '버튼의 높이 (픽셀)',
     },
+    fontSize: {
+      control: { type: 'number', min: 12, max: 72, step: 2 },
+      description: '텍스트 폰트 사이즈 (픽셀)',
+    },
+    textColor: {
+      control: 'color',
+      description: '텍스트 색상',
+    },
   },
 } satisfies Meta<typeof MainButton>;
 
@@ -92,5 +100,34 @@ export const WideButton: Story = {
     children: '넓은 버튼',
     width: 400,
     height: 60,
+  },
+};
+
+export const LargeFont: Story = {
+  args: {
+    children: '큰 폰트',
+    fontSize: 48,
+  },
+};
+
+export const SmallFont: Story = {
+  args: {
+    children: '작은 폰트',
+    fontSize: 24,
+  },
+};
+
+export const ColoredText: Story = {
+  args: {
+    children: '색상 텍스트',
+    textColor: '#3B82F6',
+  },
+};
+
+export const CustomFontAndColor: Story = {
+  args: {
+    children: '커스텀 폰트 & 색상',
+    fontSize: 32,
+    textColor: '#EF4444',
   },
 };

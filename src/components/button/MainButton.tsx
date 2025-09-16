@@ -7,6 +7,8 @@ interface MainButtonProps {
   className?: string;
   width?: number;
   height?: number;
+  fontSize?: number;
+  textColor?: string;
 }
 
 const MainButton = ({ 
@@ -15,7 +17,9 @@ const MainButton = ({
   disabled = false, 
   className = '', 
   width = 192, 
-  height = 64 
+  height = 64,
+  fontSize = 36,
+  textColor = 'white'
 }: MainButtonProps) => {
   const buttonStyle = {
     width: `${width}px`,
@@ -47,7 +51,13 @@ const MainButton = ({
       />
       
       {/* 텍스트 - 중앙 정렬 */}
-      <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold font-['SEBANG_Gothic'] leading-none">
+      <div 
+        className="absolute inset-0 flex items-center justify-center font-bold font-sebang-gothic leading-none"
+        style={{ 
+          fontSize: `${fontSize}px`,
+          color: textColor
+        }}
+      >
         {children}
       </div>
     </button>
