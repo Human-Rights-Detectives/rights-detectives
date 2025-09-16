@@ -5,6 +5,8 @@ import MagnifyingGlass from "../MagnifyingGlass";
 import Memo from "../../../../components/memo/Memo";
 import Line from "../../../../components/line/Line";
 import MainButton from "../../../../components/button/MainButton";
+import Star from "../../../../components/star/Star";
+import Underline from "../../../../components/underline/Underline";
 
 interface MissionIntroStepProps {
   episode: Episode;
@@ -44,10 +46,28 @@ const MissionIntroStep: React.FC<MissionIntroStepProps> = ({
         {`EPISODE ${episode.number.toString().padStart(2, "0")}`}
       </div>
 
+      {/* 헤더더 컨텐츠 영역 */}
+      <div className="absolute top-20 left-14 w-[165px] z-10">
+        {/* MISSION 01 */}
+        <div className="text-[#4B3118] text-left text-[16px] font-bold font-inter mb-2">
+          {`MISSION ${mission.missionNumber.toString().padStart(2, "0")}`}
+        </div>
+        {/* 제목 영역 */}
+        <div className="mb-[19px] relative">
+          <div className="absolute -top-4 left-22">
+            <Star width={42} height={42} />
+          </div>
+          <h1 className="text-[#4B3118] text-left text-[28px] font-bold font-sebang-gothic leading-[1.2] whitespace-pre-line mb-1">
+            {episode.title}
+          </h1>
+          <Underline width={163} height={2} />
+        </div>
+      </div>
+
       <div className="absolute top-18 -right-[9px] z-10">
-        <Memo 
-          width={126} 
-          height={126} 
+        <Memo
+          width={126}
+          height={126}
           image={`/src/assets/images/target/${episode.number}-${mission.missionNumber}.jpg`}
         />
       </div>
