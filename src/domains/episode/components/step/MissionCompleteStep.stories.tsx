@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import MissionCompleteStep from "./MissionCompleteStep";
-import type { Mission } from "../../../../types";
+import type { Episode, Mission } from "../../../../types";
 
 const meta: Meta<typeof MissionCompleteStep> = {
   title: "Episode/Steps/MissionCompleteStep",
@@ -17,6 +17,19 @@ const meta: Meta<typeof MissionCompleteStep> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const sampleEpisode: Episode = {
+  id: 1,
+  number: 1,
+  title: "병원 실습 중 폭행 사건",
+  description: "거위군의 병원 실습 이야기",
+  missions: [],
+  color: {
+    linesColor: "#4B3118",
+    innerColor: "#F9E6B5",
+    borderColor: "#765136",
+  },
+};
+
 const sampleMission: Mission = {
   id: 1,
   missionNumber: 1,
@@ -26,6 +39,7 @@ const sampleMission: Mission = {
 
 export const Default: Story = {
   args: {
+    episode: sampleEpisode,
     mission: sampleMission,
     onNext: () => console.log("Next clicked"),
   },
@@ -33,6 +47,7 @@ export const Default: Story = {
 
 export const LastMission: Story = {
   args: {
+    episode: sampleEpisode,
     mission: {
       ...sampleMission,
       id: 3,
@@ -47,6 +62,7 @@ export const LastMission: Story = {
 
 export const Mission2: Story = {
   args: {
+    episode: sampleEpisode,
     mission: {
       ...sampleMission,
       id: 2,

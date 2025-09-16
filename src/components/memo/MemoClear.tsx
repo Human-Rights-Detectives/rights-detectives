@@ -40,7 +40,7 @@ const MemoClear: React.FC<MemoClearProps> = ({
       {image && (
         <image
           href={image}
-          x="20"
+          x="25"
           y="40"
           width="107"
           height="109"
