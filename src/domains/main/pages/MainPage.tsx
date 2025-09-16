@@ -6,8 +6,8 @@ import { useNavigate } from "react-router";
 
 const MainPage: React.FC = () => {
   const navigate = useNavigate();
-  
-  const handleEpisodeClick = (episodeId: string) => {
+
+  const handleEpisodeClick = (episodeId: number) => {
     navigate(`/episode/${episodeId}`);
   };
 
@@ -37,7 +37,9 @@ const MainPage: React.FC = () => {
           {episodesData.map((episode) => (
             <EpisodeCardItem
               key={episode.id}
-              episodeNumber={`EPISODE ${episode.number.toString().padStart(2, '0')}`}
+              episodeNumber={`EPISODE ${episode.number
+                .toString()
+                .padStart(2, "0")}`}
               title={episode.title}
               onClick={() => handleEpisodeClick(episode.id)}
               height={75}

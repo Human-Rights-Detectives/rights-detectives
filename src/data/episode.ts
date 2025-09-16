@@ -2,7 +2,7 @@ import type { Episode } from "../types";
 
 const episodesData: Episode[] = [
   {
-    id: "ep01",
+    id: 1,
     number: 1,
     title: "환자분 이러지 마세요",
     description:
@@ -34,7 +34,7 @@ const episodesData: Episode[] = [
     ],
   },
   {
-    id: "ep02",
+    id: 2,
     number: 2,
     title: "배달하다 생긴 일",
     description:
@@ -58,7 +58,7 @@ const episodesData: Episode[] = [
     ],
   },
   {
-    id: "ep03",
+    id: 3,
     number: 3,
     title: "계약서를 안썼어요!",
     description:
@@ -82,7 +82,7 @@ const episodesData: Episode[] = [
     ],
   },
   {
-    id: "ep04",
+    id: 4,
     number: 4,
     title: "월급을 안주는 사장님",
     description:
@@ -106,7 +106,7 @@ const episodesData: Episode[] = [
     ],
   },
   {
-    id: "ep05",
+    id: 5,
     number: 5,
     title: "몇장만 더 찍을게!",
     description:
@@ -130,7 +130,7 @@ const episodesData: Episode[] = [
     ],
   },
   {
-    id: "ep06",
+    id: 6,
     number: 6,
     title: "제발, 쉬게 해주세요",
     description:
@@ -154,7 +154,7 @@ const episodesData: Episode[] = [
     ],
   },
   {
-    id: "ep07",
+    id: 7,
     number: 7,
     title: "앗 뜨거!",
     description:
