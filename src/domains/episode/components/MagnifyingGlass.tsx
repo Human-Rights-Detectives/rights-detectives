@@ -14,7 +14,7 @@ const MagnifyingGlass: React.FC<MagnifyingGlassProps> = ({
   return (
     <img
       src="/images/magnifying-glass.svg"
-      alt="Magnifying Glass"
+      alt="돋보기"
       width={width}
       height={height}
       className={className}
