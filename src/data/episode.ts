@@ -7,6 +7,11 @@ const episodesData: Episode[] = [
     title: "환자분!\n이러지 마세요",
     description:
       "거위군은 이번 달 부터\n정신과 병동에서 실습 중인\n대학생입니다.\n거위군은 퇴원을 앞둔\n다람쥐 환자를 만났어요.\n그런데 갑자기..!",
+    color: {
+      linesColor: "#FCBB76",
+      innerColor: "#F99D31",
+      borderColor: "#BF5C1D",
+    },
     missions: [
       {
         id: 1,
@@ -39,6 +44,11 @@ const episodesData: Episode[] = [
     title: "배달하다 생긴 일",
     description:
       "환자는 자신의 질병과 치료에 대해 충분히 알 권리가 있습니다. 이 에피소드에서는 환자의 알 권리와 의료진의 설명 의무를 다룹니다.",
+    color: {
+      linesColor: "#76C7FC",
+      innerColor: "#3199F9",
+      borderColor: "#1D5CBF",
+    },
     missions: [
       {
         id: 1,
@@ -63,6 +73,11 @@ const episodesData: Episode[] = [
     title: "계약서를 안썼어요!",
     description:
       "의료 사고가 발생했을 때 환자와 의료진의 권리와 의무를 이해하는 것이 중요합니다. 이 에피소드에서는 의료 사고 관련 법적 문제를 다룹니다.",
+    color: {
+      linesColor: "#FC76A3",
+      innerColor: "#F9317A",
+      borderColor: "#BF1D5C",
+    },
     missions: [
       {
         id: 1,
@@ -87,6 +102,11 @@ const episodesData: Episode[] = [
     title: "월급을 안주는 사장님",
     description:
       "의료 사고가 발생했을 때 환자와 의료진의 권리와 의무를 이해하는 것이 중요합니다. 이 에피소드에서는 의료 사고 관련 법적 문제를 다룹니다.",
+    color: {
+      linesColor: "#A376FC",
+      innerColor: "#7A31F9",
+      borderColor: "#5C1DBF",
+    },
     missions: [
       {
         id: 1,
@@ -111,6 +131,11 @@ const episodesData: Episode[] = [
     title: "몇장만 더 찍을게!",
     description:
       "의료 사고가 발생했을 때 환자와 의료진의 권리와 의무를 이해하는 것이 중요합니다. 이 에피소드에서는 의료 사고 관련 법적 문제를 다룹니다.",
+    color: {
+      linesColor: "#76FC8A",
+      innerColor: "#31F95C",
+      borderColor: "#1DBF3D",
+    },
     missions: [
       {
         id: 1,
@@ -135,6 +160,11 @@ const episodesData: Episode[] = [
     title: "제발, 쉬게 해주세요",
     description:
       "의료 사고가 발생했을 때 환자와 의료진의 권리와 의무를 이해하는 것이 중요합니다. 이 에피소드에서는 의료 사고 관련 법적 문제를 다룹니다.",
+    color: {
+      linesColor: "#FCFC76",
+      innerColor: "#F9F931",
+      borderColor: "#BFBF1D",
+    },
     missions: [
       {
         id: 1,
@@ -159,6 +189,11 @@ const episodesData: Episode[] = [
     title: "앗 뜨거!",
     description:
       "의료 사고가 발생했을 때 환자와 의료진의 권리와 의무를 이해하는 것이 중요합니다. 이 에피소드에서는 의료 사고 관련 법적 문제를 다룹니다.",
+    color: {
+      linesColor: "#FC7676",
+      innerColor: "#F93131",
+      borderColor: "#BF1D1D",
+    },
     missions: [
       {
         id: 1,

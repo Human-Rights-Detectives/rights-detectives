@@ -26,10 +26,10 @@ const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({
             width={400}
             height={600}
             colors={{
-              border: "#BF5C1D",
-              inner: "#F99D31",
+              border: episode.color.borderColor,
+              inner: episode.color.innerColor,
               holes: "#765136",
-              lines: "#FCBB76",
+              lines: episode.color.linesColor,
               surface: "#EDD39E",
               background: "#F9E6B5",
               stroke: "#422A18",

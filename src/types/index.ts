@@ -13,4 +13,11 @@ export interface Episode {
   title: string; // 에피소드 제목
   description: string; // 에피소드 설명
   missions: Mission[]; // 에피소드에 포함된 미션 목록
+  color: Color; // 에피소드 색상
+}
+
+interface Color {
+  linesColor: string;
+  innerColor: string;
+  borderColor: string;
 }
