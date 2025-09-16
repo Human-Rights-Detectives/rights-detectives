@@ -109,6 +109,7 @@ const EpisodePage: React.FC = () => {
         currentStep === EpisodeStep.MISSION_3_INTRO) &&
         currentMission && (
           <MissionIntroStep
+            episode={episode}
             mission={currentMission}
             onNext={handleMissionIntroNext}
           />
