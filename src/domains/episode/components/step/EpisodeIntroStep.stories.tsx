@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import EpisodeIntroStep from "./EpisodeIntroStep";
 import type { Episode, Mission } from "../../../../types";
 
@@ -30,6 +30,11 @@ const sampleEpisode: Episode = {
   title: "환자분 이러지 마세요",
   description: "거위군은 이번 달 부터\n정신과 병동에서 실습 중인\n대학생입니다.\n거위군은 퇴원을 앞둔\n다람쥐 환자를 만났어요.\n그런데 갑자기..!",
   missions: [sampleMission],
+  color: {
+    linesColor: "#F9E6B5",
+    innerColor: "#8B4513",
+    borderColor: "#D2691E",
+  },
 };
 
 export const Default: Story = {

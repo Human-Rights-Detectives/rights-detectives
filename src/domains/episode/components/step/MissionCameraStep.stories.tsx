@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import MissionCameraStep from "./MissionCameraStep";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import MissionCameraStep from "./MissionCameraStep";  
 import type { Mission } from "../../../../types";
 
 const meta: Meta<typeof MissionCameraStep> = {
