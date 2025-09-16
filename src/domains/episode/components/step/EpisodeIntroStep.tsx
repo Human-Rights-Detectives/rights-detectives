@@ -39,7 +39,7 @@ const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({
 
         {/* 돋보기 - 왼쪽 상단에 배치 */}
         <div className="absolute top-4 left-4 z-10">
-          <MagnifyingGlass width={60} height={80} />
+          <MagnifyingGlass width={94} height={126} />
         </div>
 
         {/* EPISODE 0X*/}
@@ -57,14 +57,14 @@ const EpisodeIntroStep: React.FC<EpisodeIntroStepProps> = ({
           {/* 제목 영역 */}
           <div className="mb-6">
             <div className="flex items-start justify-between mb-2">
-              <h1 className="text-[#4B3118] text-left text-[38px] font-bold font-sebang-gothic whitespace-pre-line flex-1">
+              <h1 className="text-[#4B3118] text-left text-[38px] font-bold font-sebang-gothic leading-[1.2] whitespace-pre-line flex-1">
                 {episode.title}
               </h1>
               <div className="ml-4">
-                <Star width={24} height={24} />
+                <Star width={46} height={46} />
               </div>
             </div>
-            <Underline width={200} height={3} />
+            <Underline width={220} height={3} />
           </div>
 
           {/* 설명 텍스트 */}
