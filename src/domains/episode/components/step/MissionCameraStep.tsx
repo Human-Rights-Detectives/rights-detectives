@@ -31,6 +31,7 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
 
   // 간단한 상태 관리
   const [cameraState, setCameraState] = useState<CameraState | null>(null);
+  const [hasCameraPermission, setHasCameraPermission] = useState(false);
 
   // 목표 이미지 경로
   const goalImagePath = `/images/target/${episode.number}-${mission.missionNumber}.jpg`;
@@ -46,10 +47,13 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
 
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
+        // 카메라 권한을 성공적으로 받았을 때 상태 업데이트
+        setHasCameraPermission(true);
       }
     } catch (error) {
       console.error("카메라 접근 오류:", error);
       alert("카메라에 접근할 수 없습니다. 브라우저 권한을 확인해주세요.");
+      setHasCameraPermission(false);
     }
   };
 
@@ -208,37 +212,50 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
             className="w-full h-full object-cover"
           />
 
-          {/* Memo 컴포넌트와 안내 텍스트 오버레이 */}
-          <div className="absolute top-6 left-[50%] -translate-x-1/2 flex flex-col items-center justify-center">
-            {/* Memo 컴포넌트 */}
-            <div className="mb-4">
-              <Memo
-                width={130}
-                height={141}
-                image={`/images/target/${episode.number}-${mission.missionNumber}.jpg`}
-              />
+          {!hasCameraPermission && (
+            <div className="absolute top-[50%] left-[50%] -translate-x-1/2 flex flex-col items-center justify-center">
+              <div className="text-center text-white font-nanum-square">
+                <p className="text-lg font-bold">
+                  사진 촬영을 위해 카메라 권한을 허용해주세요
+                </p>
+              </div>
             </div>
+          )}
 
-            {/* 안내 텍스트 */}
-            <div className="text-center text-white font-nanum-square">
-              <p className="text-lg font-bold">그림 속 장면을 보고,</p>
-              <p className="text-lg font-bold">사건 현장을 찾아보세요!</p>
+          {/* 카메라 권한을 받은 후에만 Memo 컴포넌트와 안내 텍스트 오버레이 렌더링 */}
+          {hasCameraPermission && (
+            <div className="absolute top-6 left-[50%] -translate-x-1/2 flex flex-col items-center justify-center">
+              {/* Memo 컴포넌트 */}
+              <div className="mb-4">
+                <Memo
+                  width={130}
+                  height={141}
+                  image={`/images/target/${episode.number}-${mission.missionNumber}.jpg`}
+                />
+              </div>
+
+              {/* 안내 텍스트 */}
+              <div className="text-center text-white font-nanum-square">
+                <p className="text-lg font-bold">그림 속 장면을 보고,</p>
+                <p className="text-lg font-bold">사건 현장을 찾아보세요!</p>
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* 촬영 버튼 */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <MainButton
-              onClick={capturePhoto}
-              width={159}
-              height={46}
-              fontSize={20}
-              textColor="#F9E6B5"
-              disabled={cameraState === CameraState.CAPTURING}
-            >
-              사진 촬영하기
-            </MainButton>
-          </div>
+          {hasCameraPermission && (
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+              <MainButton
+                onClick={capturePhoto}
+                width={159}
+                height={46}
+                fontSize={20}
+                textColor="#F9E6B5"
+                disabled={cameraState === CameraState.CAPTURING}
+              >
+                사진 촬영하기
+              </MainButton>
+            </div>
+          )}
         </div>
       )}
     </div>
