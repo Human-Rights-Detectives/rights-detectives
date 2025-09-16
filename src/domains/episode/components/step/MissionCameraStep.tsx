@@ -242,20 +242,22 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
             </div>
           )}
 
-          {hasCameraPermission && (
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-              <MainButton
-                onClick={capturePhoto}
-                width={159}
-                height={46}
-                fontSize={20}
-                textColor="#F9E6B5"
-                disabled={cameraState === CameraState.CAPTURING}
-              >
-                사진 촬영하기
-              </MainButton>
-            </div>
-          )}
+           {hasCameraPermission && (
+             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+               <MainButton
+                 onClick={capturePhoto}
+                 width={159}
+                 height={46}
+                 fontSize={20}
+                 textColor="#F9E6B5"
+                 disabled={cameraState === CameraState.CAPTURING}
+                 loading={cameraState === CameraState.CAPTURING}
+                 loadingText="비교 중..."
+               >
+                 사진 촬영하기
+               </MainButton>
+             </div>
+           )}
         </div>
       )}
     </div>

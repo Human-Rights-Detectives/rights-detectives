@@ -41,6 +41,14 @@ const meta = {
       control: 'color',
       description: '텍스트 색상',
     },
+    loading: {
+      control: 'boolean',
+      description: '로딩 상태 여부',
+    },
+    loadingText: {
+      control: 'text',
+      description: '로딩 중 표시할 텍스트',
+    },
   },
 } satisfies Meta<typeof MainButton>;
 
@@ -129,5 +137,43 @@ export const CustomFontAndColor: Story = {
     children: '커스텀 폰트 & 색상',
     fontSize: 32,
     textColor: '#EF4444',
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    children: '로딩 버튼',
+    loading: true,
+    disabled: true,
+  },
+};
+
+export const LoadingWithCustomText: Story = {
+  args: {
+    children: '처리 중인 버튼',
+    loading: true,
+    loadingText: '분석 중...',
+    disabled: true,
+  },
+};
+
+export const LoadingWithLongText: Story = {
+  args: {
+    children: '긴 로딩 텍스트',
+    loading: true,
+    loadingText: '데이터를 처리하고 있습니다...',
+    disabled: true,
+  },
+};
+
+export const LoadingSmall: Story = {
+  args: {
+    children: '작은 로딩 버튼',
+    loading: true,
+    loadingText: '처리 중',
+    width: 120,
+    height: 40,
+    fontSize: 16,
+    disabled: true,
   },
 };

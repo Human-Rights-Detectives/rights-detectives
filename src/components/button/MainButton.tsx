@@ -9,6 +9,8 @@ interface MainButtonProps {
   height?: number;
   fontSize?: number;
   textColor?: string;
+  loading?: boolean;
+  loadingText?: string;
 }
 
 const MainButton = ({ 
@@ -19,7 +21,9 @@ const MainButton = ({
   width = 192, 
   height = 64,
   fontSize = 36,
-  textColor = 'white'
+  textColor = 'white',
+  loading = false,
+  loadingText
 }: MainButtonProps) => {
   const buttonStyle = {
     width: `${width}px`,
@@ -58,7 +62,15 @@ const MainButton = ({
           color: textColor
         }}
       >
-        {children}
+        {loading ? (
+          <div className="flex items-center gap-2">
+            {/* 로딩 스피너 */}
+            <div className="animate-spin rounded-full h-4 w-4 border-2 border-current border-t-transparent"></div>
+            <span>{loadingText || '처리 중...'}</span>
+          </div>
+        ) : (
+          children
+        )}
       </div>
     </button>
   );
