@@ -19,7 +19,7 @@ const VersionDialog: React.FC<VersionDialogProps> = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
 
-  const version = "0.0.1";
+  const version = "0.0.2";
   const buildDate = "2025-09-17";
 
   return (
