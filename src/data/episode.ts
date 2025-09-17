@@ -115,29 +115,36 @@ const episodesData: Episode[] = [
   {
     id: 4,
     number: 4,
-    title: "월급을 안주는 사장님",
+    title: "월급을\n안주는 사장님",
     description:
-      "의료 사고가 발생했을 때 환자와 의료진의 권리와 의무를 이해하는 것이 중요합니다. 이 에피소드에서는 의료 사고 관련 법적 문제를 다룹니다.",
+      "노트북을 사기 위해\n달팽이군은\n편의점 알바를 시작했어요!",
     color: {
-      linesColor: "#A376FC",
-      innerColor: "#7A31F9",
-      borderColor: "#5C1DBF",
+      linesColor: "#F4383B",
+      innerColor: "#FF6767",
+      borderColor: "#BF1D1D",
     },
     missions: [
       {
         id: 1,
         missionNumber: 1,
         description:
-          "월급을 안주는 사장님!\n거위군이 한 달 동안 열심히\n일했는데 사장님이 월급을\n주지 않겠다고 해요.\n어떻게 해야 할까요?",
+          "하지만 알바를 하는 2달동안\n월급날에 돈을 받지 못했어요!\n답답한 마음에 잠시 밖에서\n바람을 쐬는 달팽이군",
         completeDescription:
-          "월급을 받지 못한 거위군은\n어떤 조치를 취해야 할까요?\n이어서 어떻게 할까요?",
+          "달팽이군은 어떻게 해야\n돈을 받을까\n고민하다가 어딘가로 향하게\n되는데",
       },
       {
         id: 2,
         missionNumber: 2,
-        description: "임금체불 시 취할 수 있는 조치를 설명하세요.",
+        description: "노동청으로 간 달팽이군\n노동청 직원에게 상황을\n설명하며 도와달라고 했다.",
         completeDescription:
-          "임금체불 시 노동위원회에 신고하거나, 고용노동부에 신고할 수 있습니다.",
+          "노동청 직원은 달팽이를\n데리고 어딘가로 향한다.",
+      },
+      {
+        id: 3,
+        missionNumber: 3,
+        description: "노동청 직원이 데려간 곳은\n빨간 아파트",
+        completeDescription:
+          "사장님에게 임금 지급\n명령을 하여\n그동안 미렸던 월급을\n지급받게 된다.\n“도와주셔서 감사합니다!”",
       },
     ],
   },
