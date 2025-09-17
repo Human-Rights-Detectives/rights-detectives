@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../../components/logo/Logo";
 import MainButton from "../../../components/button/MainButton";
+import BackgroundAudio from "../../../components/audio/BackgroundAudio";
 import { useNavigate } from "react-router";
 
 const StartPage: React.FC = () => {
@@ -19,6 +20,14 @@ const StartPage: React.FC = () => {
         backgroundSize: "auto"
       }}
     >
+      {/* 백그라운드 음악 */}
+      <BackgroundAudio 
+        src="/music/home-song.MP3" 
+        loop={true} 
+        volume={0.3} 
+        autoPlay={true} 
+      />
+
       {/* 로고 섹션 */}
       <div className="mb-16">
         <Logo width={320} height={279} />

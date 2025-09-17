@@ -7,6 +7,7 @@ import EpisodeIntroStep from "../components/step/EpisodeIntroStep";
 import MissionIntroStep from "../components/step/MissionIntroStep";
 import MissionCameraStep from "../components/step/MissionCameraStep";
 import MissionCompleteStep from "../components/step/MissionCompleteStep";
+import BackgroundAudio from "../../../components/audio/BackgroundAudio";
 
 const EpisodePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -33,6 +34,17 @@ const EpisodePage: React.FC = () => {
 
   const currentMission = episode.missions[currentMissionIndex];
   const isLastMission = currentMissionIndex === episode.missions.length - 1;
+
+  // 에피소드 ID에 따라 음악 선택
+  const getMusicSrc = (episodeId: number): string => {
+    if (episodeId >= 1 && episodeId <= 4) {
+      return "/music/basic-bg-song.MP3";
+    } else if (episodeId >= 5 && episodeId <= 7) {
+      return "/music/dark-song.MP3";
+    }
+    // 기본값으로 basic-bg-song 사용
+    return "/music/basic-bg-song.MP3";
+  };
 
   // 단계별 핸들러 함수들
   const handleEpisodeIntroNext = () => {
@@ -80,6 +92,14 @@ const EpisodePage: React.FC = () => {
 
   return (
     <main className="h-screen flex flex-col items-center justify-center relative">
+      {/* 백그라운드 음악 */}
+      <BackgroundAudio 
+        src={getMusicSrc(episode.id)} 
+        loop={true} 
+        volume={0.3} 
+        autoPlay={true} 
+      />
+
       {/* 배경 이미지 */}
       <div
         className="absolute inset-0"

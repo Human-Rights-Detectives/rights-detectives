@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../../components/logo/Logo";
 import EpisodeCardItem from "../components/EpisodeCardItem";
+import BackgroundAudio from "../../../components/audio/BackgroundAudio";
 import episodesData from "../../../data/episode";
 import { useNavigate } from "react-router";
 
@@ -13,6 +14,14 @@ const MainPage: React.FC = () => {
 
   return (
     <main className="min-h-screen flex flex-col items-center p-8 relative bg-[#FFD785]">
+      {/* 백그라운드 음악 */}
+      <BackgroundAudio 
+        src="/music/home-song.MP3" 
+        loop={true} 
+        volume={0.3} 
+        autoPlay={true} 
+      />
+
       {/* 배경 이미지 */}
       <div
         className="absolute inset-0 opacity-29"
