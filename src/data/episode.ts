@@ -223,29 +223,36 @@ const episodesData: Episode[] = [
   {
     id: 7,
     number: 7,
-    title: "앗 뜨거!",
+    title: "앗 뜨거!!",
     description:
-      "의료 사고가 발생했을 때 환자와 의료진의 권리와 의무를 이해하는 것이 중요합니다. 이 에피소드에서는 의료 사고 관련 법적 문제를 다룹니다.",
+      "고기집에서\n아르바이트를\n시작한 하양이에게\n생긴 일은?",
     color: {
-      linesColor: "#FC7676",
-      innerColor: "#F93131",
-      borderColor: "#BF1D1D",
+      linesColor: "#1D84FF",
+      innerColor: "#71FFFB",
+      borderColor: "#00CFFF",
     },
     missions: [
       {
         id: 1,
         missionNumber: 1,
         description:
-          "앗 뜨거!\n거위군이 식당에서 일하다가\n뜨거운 물에 손을 데었어요.\n사장님이 치료비를 주지 않겠다고\n하는데... 어떻게 해야 할까요?",
+          "고기를 굽던 중 실수로 뜨거운\n불판에 팔을 데이고 말았어요\n“앗!! 뜨거!!!\n으아아아아!!!”",
         completeDescription:
-          "업무 중 다친 거위군은\n어떻게 해야 할까요?\n이어서 어떻게 할까요?",
+          "하양이는 심하게 데었지만,\n사장님은 병원비를\n주지 않았어요.\n하양이는 어떻게 해야 할까요?",
       },
       {
         id: 2,
         missionNumber: 2,
-        description: "산업재해와 사업주의 의무에 대해 설명하세요.",
+        description: "하양이는 인터넷을 통해\n‘근로복지공단’을\n알게 돼요.\n곧장 공단에 찾아가 도움을\n요청해요.",
         completeDescription:
-          "업무 중 발생한 상해는 산업재해로 인정되며, 사업주는 치료비와 휴업급여를 지급해야 합니다.",
+          " 하양이는 실습생이나\n단기 알바도 다칠 경우\n산재보상 받을 수 있다는 것을\n알게 되었어요.",
+      },
+      {
+        id: 3,
+        missionNumber: 3,
+        description: "얼마 후, 하양이는\n근로복지공단의 도움으로\n산재 처리를 받아서\n치료비 일부를 보상받았어요.",
+        completeDescription:
+          "하양이는 기뻐서 소리쳐요!\n“이제 병원비 걱정 안 해도 돼!!”",
       },
     ],
   },
