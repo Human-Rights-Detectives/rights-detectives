@@ -108,7 +108,7 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
       }
 
       const similarityNumber = parseFloat(similarity);
-      const success = similarityNumber >= 60; // 60% 이상이면 성공
+      const success = similarityNumber >= 50; // 50% 이상이면 성공
 
       console.log("🔍 이미지 비교 결과:", {
         similarity: similarityNumber,
