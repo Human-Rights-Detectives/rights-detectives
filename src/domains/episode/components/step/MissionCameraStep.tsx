@@ -32,6 +32,10 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
   // 간단한 상태 관리
   const [cameraState, setCameraState] = useState<CameraState | null>(null);
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
+  
+  // 이스터 에그 상태 관리
+  const [clickCount, setClickCount] = useState(0);
+  const [lastClickTime, setLastClickTime] = useState(0);
 
   // 목표 이미지 경로
   const goalImagePath = `/images/target/${episode.number}-${mission.missionNumber}.jpg`;
@@ -133,6 +137,32 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
     startCamera();
   };
 
+  // 이스터 에그: Memo 컴포넌트 빠르게 5번 클릭 시 성공 처리
+  const handleMemoClick = () => {
+    const currentTime = Date.now();
+    const timeDiff = currentTime - lastClickTime;
+    
+    // 1초 이내에 클릭한 경우에만 카운트 증가
+    if (timeDiff < 1000) {
+      const newClickCount = clickCount + 1;
+      setClickCount(newClickCount);
+      
+      console.log(`🎯 이스터 에그 클릭: ${newClickCount}/5`);
+      
+      // 5번 클릭 시 성공 처리
+      if (newClickCount >= 5) {
+        console.log("🎉 이스터 에그 성공! 미션 완료 처리");
+        onComplete(true, 100); // 100% 유사도로 성공 처리
+        setClickCount(0); // 카운트 리셋
+      }
+    } else {
+      // 1초 이상 간격이면 카운트 리셋
+      setClickCount(1);
+    }
+    
+    setLastClickTime(currentTime);
+  };
+
   useEffect(() => {
     startCamera();
 
@@ -226,7 +256,7 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
           {hasCameraPermission && (
             <div className="absolute top-6 left-[50%] -translate-x-1/2 flex flex-col items-center justify-center">
               {/* Memo 컴포넌트 */}
-              <div className="mb-4">
+              <div className="mb-4 cursor-pointer" onClick={handleMemoClick}>
                 <Memo
                   width={130}
                   height={141}
