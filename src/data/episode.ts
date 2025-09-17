@@ -187,29 +187,36 @@ const episodesData: Episode[] = [
   {
     id: 6,
     number: 6,
-    title: "제발, 쉬게 해주세요",
+    title: "제발,\n쉬게 해주세요",
     description:
-      "의료 사고가 발생했을 때 환자와 의료진의 권리와 의무를 이해하는 것이 중요합니다. 이 에피소드에서는 의료 사고 관련 법적 문제를 다룹니다.",
+      "학원비를 벌기 위해\n아침부터 저녁까지\n일하고 있는 토끼양.\n너무 힘들어 보여요.\n무슨 일인지 알아볼까요?",
     color: {
-      linesColor: "#FCFC76",
-      innerColor: "#F9F931",
-      borderColor: "#BFBF1D",
+      linesColor: "#9B89DD",
+      innerColor: "#C3BBE9",
+      borderColor: "#791DBF",
     },
     missions: [
       {
         id: 1,
         missionNumber: 1,
         description:
-          "제발, 쉬게 해주세요!\n거위군이 연속으로 3일째\n야근을 하고 있어요.\n사장님이 쉬지 말고 계속\n일하라고 하는데... 어떻게 해야 할까요?",
+          "8시간 동안 일하는 토끼양에게\n쉬는 시간을 보장해 주지 않네요.\n불만은 가득했지만\n끝내 말하지는 못했어요.",
         completeDescription:
-          "연속 야근으로 지친 거위군은\n어떻게 해야 할까요?\n이어서 어떻게 할까요?",
+          "쉬지 마!\n일하는 시간엔\n계속 일해!",
       },
       {
         id: 2,
         missionNumber: 2,
-        description: "근로자의 휴식권과 거부권에 대해 설명하세요.",
+        description: "토끼양은 궁금했어요.\n“이렇게 못 쉬는 게 맞을까?\n누구한테 물어봐야 하지?”",
         completeDescription:
-          "근로자는 법정 근로시간을 초과하는 근무를 거부할 권리가 있으며, 충분한 휴식을 취할 권리가 있습니다.",
+          "토끼는 고용노동부에\n상담을 요청했어요.\n“4시간 넘게 일하면,\n30분은 꼭 쉬게 해야 해요!”",
+      },
+      {
+        id: 3,
+        missionNumber: 3,
+        description: "토끼양은 용기내\n사장님께 말했어요.\n“법대로 쉬는 시간을\n주세요!”",
+        completeDescription:
+          "사장님은 잘못을 인정하고\n30분 쉴 수 있게 되었어요.\n토끼는 자신의 권리를\n지켜냈어요.",
       },
     ],
   },
