@@ -81,7 +81,7 @@ const episodesData: Episode[] = [
     number: 3,
     title: "계약서를\n안썼어요!",
     description:
-      "물고기 참치군은 초밥집에서\n아르바이트를 시작했어요.\n그런데 사장님이 “바쁘니까\n\n그냥 일부터 하자!” 며 계약서를\n쓰지 않고 바로 일을 시켰어요. ",
+      "물고기 참치군은 초밥집에서\n아르바이트를 시작했어요.\n그런데 사장님이 “바쁘니까 그냥\n일부터 하자!”며 계약서를\n쓰지 않고 바로 일을 시켰어요.",
     color: {
       linesColor: "#FD9EDA",
       innerColor: "#FF4EF3",
