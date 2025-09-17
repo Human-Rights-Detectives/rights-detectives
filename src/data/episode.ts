@@ -79,29 +79,36 @@ const episodesData: Episode[] = [
   {
     id: 3,
     number: 3,
-    title: "계약서를 안썼어요!",
+    title: "계약서를\n안썼어요!",
     description:
-      "의료 사고가 발생했을 때 환자와 의료진의 권리와 의무를 이해하는 것이 중요합니다. 이 에피소드에서는 의료 사고 관련 법적 문제를 다룹니다.",
+      "물고기 참치군은 초밥집에서\n아르바이트를 시작했어요.\n그런데 사장님이 “바쁘니까\n\n그냥 일부터 하자!” 며 계약서를\n쓰지 않고 바로 일을 시켰어요. ",
     color: {
-      linesColor: "#FC76A3",
-      innerColor: "#F9317A",
-      borderColor: "#BF1D5C",
+      linesColor: "#FD9EDA",
+      innerColor: "#FF4EF3",
+      borderColor: "#BB24C9",
     },
     missions: [
       {
         id: 1,
         missionNumber: 1,
         description:
-          "계약서를 안썼어요!\n거위군이 새로운 직장에서\n일을 시작했는데 계약서를\n제대로 작성하지 않았어요.\n사장님이 월급을 주지 않겠다고\n하는데... 어떻게 해야 할까요?",
+          " 월급날이 지났는데도\n급여도 못 받고 쉬는 시간도 없이\n계속 일만 하게 된 참치군",
         completeDescription:
-          "계약서 없이 일한 거위군은\n월급을 받을 수 있을까요?\n이어서 어떻게 할까요?",
+          "문제가 심각하다고 생각한\n침치군은 누구에게\n이 상황을 털어놓을까요?",
       },
       {
         id: 2,
         missionNumber: 2,
-        description: "근로계약서의 중요성과 작성 방법을 설명하세요.",
+        description: "참치군은\n선생님께 찾아가\n이 상황을 설명했어요.",
         completeDescription:
-          "근로계약서에는 근로조건, 임금, 근로시간, 근무지 등이 명시되어야 합니다.",
+          "선생님은 참치군에게\n“계약서를 안 쓰면 임금, 근무시간,\n휴게시간 같은 권리가 지켜지기 어려워.\n일을 시작하기 전에 반드시 근로계약서를\n서면으로 작성해야 해”\n라고 말했어요.",
+      },
+      {
+        id: 3,
+        missionNumber: 3,
+        description: "참치군은 다음날 초밥 집에\n출근 후 사장님에게 말해서\n계약서를 쓰게 되었어요.",
+        completeDescription:
+          "참치군은 다짐했다.\n“앞으로는 꼭 계약서부터 쓸 거야!”",
       },
     ],
   },
