@@ -75,7 +75,7 @@ const MissionCompleteStep: React.FC<MissionCompleteStepProps> = ({
           fontSize={22}
           textColor="#F9E6B5"
         >
-          {isLastMission ? "사건 해결!" : "사건 조사하기기"}
+          {isLastMission ? "사건 해결!" : "사건 조사하기"}
         </MainButton>
       </div>
     </div>
