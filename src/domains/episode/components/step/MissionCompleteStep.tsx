@@ -61,7 +61,7 @@ const MissionCompleteStep: React.FC<MissionCompleteStepProps> = ({
       {/* 메인 컨텐츠 영역 */}
       <div className="absolute top-64 left-[52%] -translate-x-1/2 w-[217px] h-[127px] z-10">
         {/* 설명 텍스트 */}
-        <div className="text-[#4B3118] text-center text-[19px] font-regular font-omyu-pretty leading-[30px] mb-[12px] whitespace-pre-line">
+        <div className="text-[#4B3118] text-center text-[19px] font-regular font-omyu-pretty leading-[26px] mb-[12px] whitespace-pre-line">
           {mission.completeDescription}
         </div>
       </div>
