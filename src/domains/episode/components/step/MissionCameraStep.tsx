@@ -32,10 +32,17 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
   // 간단한 상태 관리
   const [cameraState, setCameraState] = useState<CameraState | null>(null);
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
-  
+
   // 이스터 에그 상태 관리
   const [clickCount, setClickCount] = useState(0);
   const [lastClickTime, setLastClickTime] = useState(0);
+
+  // FailMemo 이스터 에그 상태 관리
+  const [failMemoClickCount, setFailMemoClickCount] = useState(0);
+  const [failMemoLastClickTime, setFailMemoLastClickTime] = useState(0);
+  const [lastFailureSimilarity, setLastFailureSimilarity] = useState<
+    number | null
+  >(null);
 
   // 목표 이미지 경로
   const goalImagePath = `/images/target/${episode.number}-${mission.missionNumber}.jpg`;
@@ -123,6 +130,8 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
         // 성공 시 바로 완료 처리
         onComplete(true, similarityNumber);
       } else {
+        // 실패 시 유사도 저장
+        setLastFailureSimilarity(similarityNumber);
         setCameraState(CameraState.FAILURE);
       }
     } catch (error) {
@@ -141,14 +150,14 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
   const handleMemoClick = () => {
     const currentTime = Date.now();
     const timeDiff = currentTime - lastClickTime;
-    
+
     // 1초 이내에 클릭한 경우에만 카운트 증가
     if (timeDiff < 1000) {
       const newClickCount = clickCount + 1;
       setClickCount(newClickCount);
-      
+
       console.log(`🎯 이스터 에그 클릭: ${newClickCount}/5`);
-      
+
       // 5번 클릭 시 성공 처리
       if (newClickCount >= 5) {
         console.log("🎉 이스터 에그 성공! 미션 완료 처리");
@@ -159,8 +168,37 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
       // 1초 이상 간격이면 카운트 리셋
       setClickCount(1);
     }
-    
+
     setLastClickTime(currentTime);
+  };
+
+  // FailMemo 이스터 에그: 빠르게 5번 클릭 시 실패한 유사도 표시
+  const handleFailMemoClick = () => {
+    const currentTime = Date.now();
+    const timeDiff = currentTime - failMemoLastClickTime;
+
+    // 1초 이내에 클릭한 경우에만 카운트 증가
+    if (timeDiff < 1000) {
+      const newClickCount = failMemoClickCount + 1;
+      setFailMemoClickCount(newClickCount);
+
+      // 5번 클릭 시 유사도 정보 표시
+      if (newClickCount >= 5) {
+        if (lastFailureSimilarity !== null) {
+          alert(`실패 유사도: ${lastFailureSimilarity.toFixed(2)}%`);
+        } else {
+          alert(
+            "🔍 아직 실패한 유사도 정보가 없습니다.\n먼저 사진을 촬영해보세요!"
+          );
+        }
+        setFailMemoClickCount(0); // 카운트 리셋
+      }
+    } else {
+      // 1초 이상 간격이면 카운트 리셋
+      setFailMemoClickCount(1);
+    }
+
+    setFailMemoLastClickTime(currentTime);
   };
 
   useEffect(() => {
@@ -213,7 +251,10 @@ const MissionCameraStep: React.FC<MissionCameraStepProps> = ({
           />
 
           {/* 설명 텍스트 */}
-          <div className="absolute bottom-32 left-[52%] -translate-x-1/2 text-[#4B3118] text-center text-[21px] font-regular font-omyu-pretty leading-[30px] mb-8 whitespace-pre-line">
+          <div
+            onClick={handleFailMemoClick}
+            className="absolute bottom-32 left-[52%] -translate-x-1/2 text-[#4B3118] text-center text-[21px] font-regular font-omyu-pretty leading-[30px] mb-8 whitespace-pre-line"
+          >
             <p>다시 한 번</p>
             <p>찾아볼까요?</p>
           </div>
